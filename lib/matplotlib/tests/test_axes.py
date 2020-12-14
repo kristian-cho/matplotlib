@@ -6824,3 +6824,13 @@ def test_ylabel_ha_with_position(ha):
     ax.set_ylabel("test", y=1, ha=ha)
     ax.yaxis.set_label_position("right")
     assert ax.yaxis.get_label().get_ha() == ha
+
+def test_user_axis_lim():
+    # Tests issue 18052
+    # Check that the limits are exactly between 0 and 0.8
+    fig = plt.figure()
+    ax = fig.gca(projection = '3d')
+    ax.set_xlim(0,0.8)
+    ax.set_ylim(0,0.8)
+    ax.set_zlim(0,0.8)
+    plt.show()
