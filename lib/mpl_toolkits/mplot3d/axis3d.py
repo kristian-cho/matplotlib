@@ -185,8 +185,8 @@ class Axis(maxis.XAxis):
         ]).T
         centers = (maxs + mins) / 2.
         deltas = (maxs - mins) / 12.
-        mins = mins - deltas / 4.
-        maxs = maxs + deltas / 4.
+        mins = mins
+        maxs = maxs
 
         vals = mins[0], maxs[0], mins[1], maxs[1], mins[2], maxs[2]
         tc = self.axes.tunit_cube(vals, self.axes.M)
